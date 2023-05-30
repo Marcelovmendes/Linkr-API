@@ -6,6 +6,8 @@ import userRoutes from "./user.routes.js";
 
 
 
-const routerList = [userRoutes];
+const routerList = [
+    userRoutes
+];
 
 export default routerList;
