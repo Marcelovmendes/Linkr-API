@@ -1,4 +1,5 @@
 import userRoutes from "./user.routes.js";
+import postRoutes from "./post.routes.js";
 
 
 
@@ -7,7 +8,8 @@ import userRoutes from "./user.routes.js";
 
 
 const routerList = [
-    userRoutes
+    userRoutes,
+    postRoutes
 ];
 
 export default routerList;
