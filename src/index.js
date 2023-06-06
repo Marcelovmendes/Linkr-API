@@ -10,7 +10,5 @@ app.use(cors())
 
 app.use(routerList);
 
-
-const { PORT } = process.env;
-
-app.listen(PORT, console.log(`The server is running on port ${PORT}`))
+const PORT = process.env.PORT ||  5000
+app.listen(PORT, ()=> console.log("Server is running on port " + PORT))

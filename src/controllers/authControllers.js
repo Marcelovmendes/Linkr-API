@@ -1,14 +1,14 @@
 import { db } from "../config/database.connection.js"
 
 export async function postUser(req, res) {
-    const { name, password, email } = res.locals.body;
+    const { name, password, email, picture } = res.locals.body;
     const timeStamp = Date.now();
     const date = new Date(timeStamp);
     try {
         await db.query(`
         INSERT INTO users (name, email, password, createdAt)
-            VALUES ($1, $2, $3, $4);
-        `, [name, email, password, date])
+            VALUES ($1, $2, $3,$4, $5);
+        `, [name, email, password,picture ,date])
 
         return res.status(201).send("Usuário cadastrado com sucesso!")
     } catch (err) {

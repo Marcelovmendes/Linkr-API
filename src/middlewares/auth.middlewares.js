@@ -41,6 +41,7 @@ export async function deCryPass(req, res, next) {
         const [user] = rows;
         const passwordsMatch = compareSync(body.password, user.password);
         if (!passwordsMatch) return res.status(401).send("UNAUTHORIZED");
+        res.locals.userId = user.id;
         res.locals.session = {id: user.id, token};
     } catch (err) {
         console.error(err);
